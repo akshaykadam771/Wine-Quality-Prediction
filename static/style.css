@@ -63,9 +63,25 @@ body{
     height:425px;
 }
 
+.left3{
+	background: url("./target.jpg") no-repeat center;
+	background-size: cover;
+	width:650px;
+    height:425px;
+}
+
+.left4{
+	background: url("./upload.png") no-repeat center;
+	background-size: cover;
+	width:650px;
+    height:425px;
+}
+
+
 .right{
 	padding: 25px 40px;
 }
+
 
 h2{
 	position: relative;
@@ -108,9 +124,9 @@ h1:after{
 	border: 2px solid rgba(0, 0, 0, 0);
 	outline: none;
 	background-color: rgba(230, 230, 230, 0.6);
-	padding: 0.5rem 1rem;
-	font-size: 1.1rem;
-	margin-bottom: 22px;
+	padding: 0.3rem 1rem;
+	font-size: 0.9rem;
+	margin-bottom: 20px;
 	transition: .3s;
 }
 
@@ -131,12 +147,80 @@ textarea{
 	border: none;
 	outline: none;
 	cursor: pointer;
+	margin-bottom: 20px;
 	transition: .3s;
 }
 
 .btn:hover{
     background-color: #27ae60;
 }
+
+
+.btn1{
+	width: 100%;
+	padding: 0.2rem 1rem;
+	background-color: #2e83cc;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	transition: .3s;
+}
+
+.btn1:hover{
+    background-color: #28629e;
+}
+
+.btn2{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2e83cc;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn2:hover{
+    background-color: #28629e;
+}
+
+.btn3{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn3:hover{
+    background-color: #27ae60;
+}
+
+.btn4{
+	width: 100%;
+	padding: 0.2rem 1rem;
+	background-color: #ce3e4b;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn4:hover{
+    background-color: #ca2633;
+}
+
 
 .field:focus{
     border: 2px solid rgba(30,85,250,0.47);

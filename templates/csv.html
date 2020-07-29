@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Prediction for Diabetes</title>
+    <title>Result</title>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <title>Result</title>
+
 </head>
 <body>
 	<div class="container">
 		<div class="contact-box">
-			<div class="left2"></div>
+			<div class="left3"></div>
 			    <div class="right">
 
-                    <h1> {{prediction}} </h1>
+                    <h1> Results </h1><br><br><br><br>
+					<a class="btn3" href="{{url_for('download_file')}}">DOWNLOAD</a><br><br><br><br>
 
-
-
-
+					   <form action="/statistics" method="POST">
+						   <input type="submit" class="btn2" value="VIEW STATISTICS">
+					   </form>
 
 				</div>
 
