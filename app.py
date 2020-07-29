@@ -180,7 +180,7 @@ def stat_graph():
 
 if __name__ == "__main__":
     #to run locally
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    #app.run(host='127.0.0.1', port=8000, debug=True)
 
     #to run on cloud
-	#app.run(debug=True) # running the app
+	app.run(debug=True) # running the app
