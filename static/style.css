@@ -27,9 +27,9 @@ body{
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: url("./doctor_girl.jpg") no-repeat center;
+	background: url("background1.png") no-repeat center;
 	background-size: cover;
-	filter: blur(60px);
+	filter: blur(50px);
 	z-index: -1;
 }
 .contact-box{
@@ -44,24 +44,82 @@ body{
 }
 
 .left{
-	background: url("./doctor.png") no-repeat center;
+	background: url("./wine_bottle.png") no-repeat center;
 	background-size: cover;
 	height: 100%;
 }
 
 .left1{
-	background: url("./no_diabetes.png") no-repeat center;
+	background: url("./1.png") no-repeat center;
 	background-size: cover;
-	width:650px;
-    height:425px;
+	width:900px;
+    height:630px;
 }
 
 .left2{
-	background: url("./diabetes.png") no-repeat center;
+	background: url("./2.png") no-repeat center;
 	background-size: cover;
-	width:650px;
-    height:425px;
+	width:900px;
+    height:630px;
 }
+
+.left21{
+	background: url("./3.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left22{
+	background: url("./4.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left23{
+	background: url("./5.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left24{
+	background: url("./6.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left25{
+	background: url("./7.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left26{
+	background: url("./8.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left27{
+	background: url("./9.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+.left28{
+	background: url("./10.png") no-repeat center;
+	background-size: cover;
+	width:900px;
+    height:630px;
+}
+
+
 
 .left3{
 	background: url("./target.jpg") no-repeat center;
@@ -104,7 +162,7 @@ h2:after{
     height: 4px;
     width: 50px;
     border-radius: 2px;
-    background-color: #2ecc71;
+    background-color: #d23481;
 }
 
 h1:after{
@@ -125,8 +183,8 @@ h1:after{
 	outline: none;
 	background-color: rgba(230, 230, 230, 0.6);
 	padding: 0.3rem 1rem;
-	font-size: 0.9rem;
-	margin-bottom: 20px;
+	font-size: 0.7rem;
+	margin-bottom: 10px;
 	transition: .3s;
 }
 
@@ -141,7 +199,7 @@ textarea{
 .btn{
 	width: 100%;
 	padding: 0.5rem 1rem;
-	background-color: #2ecc71;
+	background-color: #ea5e7e;
 	color: #fff;
 	font-size: 1.1rem;
 	border: none;
@@ -152,7 +210,7 @@ textarea{
 }
 
 .btn:hover{
-    background-color: #27ae60;
+    background-color: #cc3659;
 }
 
 

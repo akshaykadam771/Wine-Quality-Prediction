@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Prediction for Diabetes</title>
+	<title>Prediction for Wine Quality</title>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
@@ -11,24 +11,27 @@
 		<div class="contact-box">
 			<div class="left"></div>
 			    <div class="right">
-				    <h2>Prediction for Diabetes</h2>
+				    <h2>Prediction for Wine Quality</h2>
 
 				        <div class="form">
                             <form action="/predict" method="POST">
-                                 <input type="number" class="field" name="Pregnancies" id="Pregnancies" placeholder="PREGNANCIES" step="0.001">
-                                 <input type="number" class="field" name="Glucose" id="Glucose" placeholder="GLUCOSE" step="0.001">
-                                 <input type="number" class="field" name="BloodPressure" id="BloodPressure" placeholder="BLOOD PRESSURE" step="0.001">
-								 <input type="number" class="field" name="SkinThickness" id="SkinThickness" placeholder="SKIN THICKNESS " step="0.001">
-                                 <input type="number" class="field" name="Insulin" id="Insulin" placeholder="INSULIN" step="0.001">
-                                 <input type="number" class="field" name="bmi" id="bmi" placeholder="BMI" step="0.001">
-                                 <input type="number" class="field" name="Diabetes_Pedigree_Function" id="Diabetes_Pedigree_Function" placeholder="DAIBETES PEDIGREE FUNCTION" step="0.001">
-                                 <input type="number" class="field" name="Age" id="Age"placeholder="AGE" step="0.001">
+                                 <input type="number" class="field" name="fixed_acidity" id="fixed_acidity" placeholder="Fixed Acidity" step="0.001">
+                                 <input type="number" class="field" name="volatile_acidity" id="volatile_acidity" placeholder="Volatile Acidity" step="0.001">
+                                 <input type="number" class="field" name="citric_acid" id="citric_acid" placeholder="Citric Acid" step="0.001">
+								 <input type="number" class="field" name="residual_sugar" id="residual_sugar" placeholder="Residual Sugar" step="0.001">
+                                 <input type="number" class="field" name="chlorides" id="chlorides" placeholder="Chlorides" step="0.001">
+                                 <input type="number" class="field" name="free_sulfur_dioxide" id="free_sulfur_dioxide" placeholder="Free Sulfur Dioxide" step="0.001">
+                                 <input type="number" class="field" name="total_sulfur_dioxide" id="total_sulfur_dioxide" placeholder="Total Sulfur Dioxide" step="0.001">
+                                 <input type="number" class="field" name="density" id="density"placeholder="Density" step="0.001">
+								 <input type="number" class="field" name="pH" id="pH"placeholder="pH" step="0.001">
+								 <input type="number" class="field" name="sulphates" id="sulphates"placeholder="Sulphates" step="0.001">
+								 <input type="number" class="field" name="alcohol" id="alcohol"placeholder="Alcohol" step="0.001">
                                  <input type="submit" class="btn" value="Predict">
 
 							</form>
 							      <form action="/uploadfile" method="POST">
 									  <input type="submit" class="btn1" value="UPLOAD CSV FILE">
-									  <a class="btn4" href="https://github.com/akshaykadam771/Diabetes-Prediction-.git">Github Link</a>
+									  <a class="btn4" href="https://github.com/akshaykadam771/Wine-Quality-Prediction.git">Github Link</a>
 								  </form>
 
                         </div>

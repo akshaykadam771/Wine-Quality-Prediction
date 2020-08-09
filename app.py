@@ -24,34 +24,54 @@ def index():
     if request.method == 'POST':
         try:
             #  reading the inputs given by the user
-            Pregnancies=float(request.form['Pregnancies'])
-            Glucose = float(request.form['Glucose'])
-            BloodPressure = float(request.form['BloodPressure'])
-            SkinThickness = float(request.form['SkinThickness'])
-            Insulin = float(request.form['Insulin'])
-            bmi = float(request.form['bmi'])
-            Diabetes_Pedigree_Function = float(request.form['Diabetes_Pedigree_Function'])
-            Age = float(request.form['Age'])
+            fixed_acidity=float(request.form['fixed_acidity'])
+            volatile_acidity = float(request.form['volatile_acidity'])
+            citric_acid = float(request.form['citric_acid'])
+            residual_sugar = float(request.form['residual_sugar'])
+            chlorides = float(request.form['chlorides'])
+            free_sulfur_dioxide = float(request.form['free_sulfur_dioxide'])
+            total_sulfur_dioxide = float(request.form['total_sulfur_dioxide'])
+            density = float(request.form['density'])
+            pH = float(request.form['pH'])
+            sulphates = float(request.form['sulphates'])
+            alcohol = float(request.form['alcohol'])
 
 
-            filename = 'modelForPrediction.sav'
+            filename = 'modelForPrediction_1.sav'
             loaded_model = pickle.load(open(filename, 'rb')) # loading the model file from the storage
 
             #loading Scaler pickle file
-            scaler = pickle.load(open('sandardScalar.sav', 'rb'))
+            scaler = pickle.load(open('standardScalar_1.sav', 'rb'))
 
             # predictions using the loaded model file and scaler file
-            prediction = loaded_model.predict(scaler.transform([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, bmi, Diabetes_Pedigree_Function, Age]]))
+            prediction = loaded_model.predict(scaler.transform([[fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol]]))
 
 
             print('prediction is', prediction)
             # showing the prediction results in a UI
-            if prediction==1:
-                prediction = 'You Are A Diabetes Patient.'
-                return render_template('diabetes.html', prediction=prediction)
+            if prediction == 1:
+                return render_template('quality_1.html')
+            elif prediction == 2:
+                return render_template('quality_2.html')
+            elif prediction == 3:
+                return render_template('quality_3.html')
+            elif prediction == 4:
+                return render_template('quality_4.html')
+            elif prediction == 5:
+                return render_template('quality_5.html')
+            elif prediction == 6:
+                return render_template('quality_6.html')
+            elif prediction == 7:
+                return render_template('quality_7.html')
+            elif prediction == 8:
+                return render_template('quality_8.html')
+            elif prediction == 9:
+                return render_template('quality_9.html')
+            elif prediction == 10:
+                return render_template('quality_10.html')
+
             else:
-                prediction = 'You Are Not A Diabetes Patient.'
-                return render_template('no_diabetes.html', prediction=prediction)
+                return "something is wrong"
 
         except Exception as e:
             print('The Exception message is: ',e)
@@ -78,24 +98,27 @@ def csv():
 
 
                 # procede only if file is in correct format
-                if len(data.columns) == 8:
+                if len(data.columns) == 11:
 
                     #filling NaN values if present in dataset
-                    data['Pregnancies'].fillna(value=round(data['Pregnancies'].mean()), inplace=True)
-                    data['Glucose'].fillna(value=round(data['Glucose'].mean()), inplace=True)
-                    data['BloodPressure'].fillna(value=round(data['BloodPressure'].mean()), inplace=True)
-                    data['SkinThickness'].fillna(value=round(data['SkinThickness'].mean()), inplace=True)
-                    data['Insulin'].fillna(value=round(data['Insulin'].mean()), inplace=True)
-                    data['BMI'].fillna(value=data['BMI'].mean(), inplace=True)
-                    data['DiabetesPedigreeFunction'].fillna(value=data['DiabetesPedigreeFunction'].mean(), inplace=True)
-                    data['Age'].fillna(value=round(data['Age'].mean()), inplace=True)
+                    data['fixed acidity'].fillna(value=round(data['fixed acidity'].mean()), inplace=True)
+                    data['volatile acidity'].fillna(value=round(data['volatile acidity'].mean()), inplace=True)
+                    data['citric acid'].fillna(value=round(data['citric acid'].mean()), inplace=True)
+                    data['residual sugar'].fillna(value=round(data['residual sugar'].mean()), inplace=True)
+                    data['chlorides'].fillna(value=round(data['chlorides'].mean()), inplace=True)
+                    data['free sulfur dioxide'].fillna(value=data['free sulfur dioxide'].mean(), inplace=True)
+                    data['total sulfur dioxide'].fillna(value=data['total sulfur dioxide'].mean(), inplace=True)
+                    data['density'].fillna(value=round(data['density'].mean()), inplace=True)
+                    data['pH'].fillna(value=round(data['pH'].mean()), inplace=True)
+                    data['sulphates'].fillna(value=round(data['sulphates'].mean()), inplace=True)
+                    data['alcohol'].fillna(value=round(data['alcohol'].mean()), inplace=True)
 
                     # loading the model file from the storage
-                    model_filename = 'modelForPrediction.sav'
+                    model_filename = 'modelForPrediction_1.sav'
                     loaded_model = pickle.load(open(model_filename, 'rb'))
 
                     # loading Scaler pickle file
-                    scaler = pickle.load(open('sandardScalar.sav', 'rb'))
+                    scaler = pickle.load(open('standardScalar_1.sav', 'rb'))
 
 
                     #deleting previous files present in csv_file folder
@@ -109,7 +132,7 @@ def csv():
 
                     # making prediction
                     prediction = loaded_model.predict(scaler.transform(data))
-                    data['Predictions'] = prediction
+                    data['Prediction Of Quality Of Wine'] = prediction
 
                     #saving pandas dataframe as a csv file in csv_file folder
                     result_file = './csv_file/result_output_data.csv'
@@ -117,8 +140,8 @@ def csv():
 
                     #plot for prediction analysis
                     sns.set_style("ticks", {"xtick.major.size": 8, "ytick.major.size": 8})
-                    total_pridiction = sns.catplot(x='Predictions', kind='count', data=data)
-                    age_relation=sns.catplot(x='Predictions', y='Age', data=data)
+                    total_pridiction = sns.catplot(x='Prediction Of Quality Of Wine', kind='count', data=data)
+
 
                     # deleting previous graph images present in statistics folder
                     image_files = './static/statistics'
@@ -131,9 +154,8 @@ def csv():
 
                     #save graph in statictics folder inside static
                     output_path_total = './static/statistics/output_prediction.png'
-                    output_path_age = './static/statistics/relationship_age.png'
                     total_pridiction.savefig(output_path_total)
-                    age_relation.savefig(output_path_age)
+
 
                     return render_template('csv.html')
 
